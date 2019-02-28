@@ -70,6 +70,16 @@ class Instructor extends Person {
   grade(student, subject) {
     console.log(`${student.name}, sorry to let you know you didn't pass the last ${subject} test, but you are still passing. With a some more effort you could still get an A`);
   }
+
+  grade(student){
+    let amount = function () {
+      min = Math.ceil(-100);
+      max = Math.floor(100);
+      return Math.floor(Math.random() * (100 - (-100)) + (-100)); //The maximum is exclusive and the minimum is inclusive
+    };
+    console.log(`${student.name} I have added ${amount()} to your grade.`);
+    return student.grade + amount();
+  }
 }
 
 /*#### Student
@@ -231,16 +241,16 @@ const magda = new Student({
   previousBackground: `Graphic Designer(self employed)`
 });
 
-console.log(magda.listsSubjects());
-console.log(hiromi.PRAssignment('git'));
-console.log(josh.sprintChallenge('design'));
-console.log(jane.grade(josh, 'design'));
-console.log(kate.speak());
-console.log(kehinde.listsSubjects());
-console.log(olade.standUp('NET10'));
-console.log(satoshi.debugsCode(hiromi, 'preprocessing'));
-console.log(fred.demo('slack'));
-console.log(kehinde);
+// console.log(magda.listsSubjects());
+// console.log(hiromi.PRAssignment('git'));
+// console.log(josh.sprintChallenge('design'));
+// console.log(jane.grade(josh, 'design'));
+// console.log(kate.speak());
+// console.log(kehinde.listsSubjects());
+// console.log(olade.standUp('NET10'));
+// console.log(satoshi.debugsCode(hiromi, 'preprocessing'));
+// console.log(fred.demo('slack'));
+// console.log(kehinde);
 
 
 /*#### Stretch Problem
@@ -251,3 +261,17 @@ console.log(kehinde);
   * This method, when called, will check the grade of the student and see if they're ready to graduate from Lambda School
   * If the student's grade is above a 70% let them graduate! Otherwise go back to grading their assignments to increase their score.
 */
+
+this.grade = studentInfo.grade;
+studentInfo.grade = Math.min(100, Math.max(0, int));
+
+
+
+console.log();
+console.log();
+console.log();
+console.log();
+console.log();
+
+
+
