@@ -115,6 +115,15 @@ class Student extends Person {
   sprintChallenge(subject){
     console.log(`${this.name} has begun with the attempt to make the greatest spring challenge submission for ${subject}]`);
   }
+
+  graduate() {
+    if (this.grade >= 70){
+      console.log(`Congratulations ${this.name} you have met all requirements to graduate! Here is your certificate!`);
+    }
+    else {
+      console.log(`Unfortunately ${this.name} you do not meet the requirements just yet, you are ${(100 - this.grade)} away from graduation.`);
+    }
+  }
 }
 
 /*#### Project Manager
@@ -264,7 +273,6 @@ const magda = new Student({
 
 this.grade = studentInfo.grade;
 studentInfo.grade = Math.min(100, Math.max(0, int));
-
 
 
 console.log();
