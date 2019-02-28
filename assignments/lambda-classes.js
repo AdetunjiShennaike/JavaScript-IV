@@ -102,6 +102,7 @@ class Student extends Person {
     this.previousBackground = studentInfo.previousBackground;
     this.className = studentInfo.className;
     this.favSubjects = studentInfo.favSubjects;
+    this.grade = Math.min(100, Math.max(0, studentInfo.grade));
   }
 
   listsSubjects(){
@@ -217,7 +218,8 @@ const josh = new Student({
   gender: 'male',
   favSubjects: ['Python','HTML','Java','CSS'],
   className: 'UI12',
-  previousBackground: `FullStack Dev lacking a design eye`
+  previousBackground: `FullStack Dev lacking a design eye`,
+  grade: 68
 });
 
 const kehinde = new Student({
@@ -227,7 +229,8 @@ const kehinde = new Student({
   gender: 'male',
   favSubjects: ['Ruby','Python','C','Wamp'],
   className: 'NET10',
-  previousBackground: `Intern for startup (that failed)<- [not his fault]`
+  previousBackground: `Intern for startup (that failed)<- [not his fault]`,
+  grade: 96
 });
 
 const hiromi = new Student({
@@ -237,7 +240,8 @@ const hiromi = new Student({
   gender: 'female',
   favSubjects: ['HTML','CSS','JS'],
   className: 'WEB20',
-  previousBackground: `7/11 employee`
+  previousBackground: `7/11 employee`,
+  grade: 90
 });
 
 const magda = new Student({
@@ -247,7 +251,8 @@ const magda = new Student({
   gender: 'female',
   favSubjects: 'CSS',
   className: 'UI12',
-  previousBackground: `Graphic Designer(self employed)`
+  previousBackground: `Graphic Designer(self employed)`,
+  grade: 72
 });
 
 // console.log(magda.listsSubjects());
@@ -270,10 +275,6 @@ const magda = new Student({
   * This method, when called, will check the grade of the student and see if they're ready to graduate from Lambda School
   * If the student's grade is above a 70% let them graduate! Otherwise go back to grading their assignments to increase their score.
 */
-
-this.grade = studentInfo.grade;
-studentInfo.grade = Math.min(100, Math.max(0, int));
-
 
 console.log();
 console.log();
