@@ -72,13 +72,14 @@ class Instructor extends Person {
   }
 
   gradeScore(student){
-    let amount = function () {
+    let randomNumber = function () {
       let min = Math.ceil(-100);
       let max = Math.floor(100);
       return Math.floor(Math.random() * (max - min) + min); //The maximum is exclusive and the minimum is inclusive
     };
-    console.log(`${student.name} I have added ${amount()} to your grade.`);
-    return student.grade += amount();
+    let amount = randomNumber();
+    console.log(`${student.name} I have added ${amount} to your grade.`);
+    return student.grade += amount;
   }
 }
 
