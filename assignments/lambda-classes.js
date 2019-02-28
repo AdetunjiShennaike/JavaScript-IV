@@ -71,14 +71,14 @@ class Instructor extends Person {
     console.log(`${student.name}, sorry to let you know you didn't pass the last ${subject} test, but you are still passing. With a some more effort you could still get an A`);
   }
 
-  grade(student){
+  gradeScore(student){
     let amount = function () {
-      min = Math.ceil(-100);
-      max = Math.floor(100);
-      return Math.floor(Math.random() * (100 - (-100)) + (-100)); //The maximum is exclusive and the minimum is inclusive
+      let min = Math.ceil(-100);
+      let max = Math.floor(100);
+      return Math.floor(Math.random() * (max - min) + min); //The maximum is exclusive and the minimum is inclusive
     };
     console.log(`${student.name} I have added ${amount()} to your grade.`);
-    return student.grade + amount();
+    return student.grade += amount();
   }
 }
 
@@ -122,7 +122,7 @@ class Student extends Person {
       console.log(`Congratulations ${this.name} you have met all requirements to graduate! Here is your certificate!`);
     }
     else {
-      console.log(`Unfortunately ${this.name} you do not meet the requirements just yet, you are ${(100 - this.grade)} away from graduation.`);
+      console.log(`Unfortunately ${this.name} you do not meet the requirements just yet, you are ${(70 - this.grade)} away from graduation.`);
     }
   }
 }
@@ -276,11 +276,11 @@ const magda = new Student({
   * If the student's grade is above a 70% let them graduate! Otherwise go back to grading their assignments to increase their score.
 */
 
-console.log();
-console.log();
-console.log();
-console.log();
-console.log();
+console.log(olade.gradeScore(josh));
+console.log(josh);
+console.log(kate.gradeScore(josh));
+console.log(josh);
+console.log(josh.graduate());
 
 
 
