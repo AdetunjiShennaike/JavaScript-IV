@@ -79,7 +79,7 @@ class Instructor extends Person {
     };
     let amount = randomNumber();
     console.log(`${student.name} I have added ${amount} to your grade.`);
-    return student.grade += amount;
+    return student.grade = (Math.min(100, Math.max(0, (student.grade += amount))));
   }
 }
 
@@ -231,7 +231,7 @@ const kehinde = new Student({
   favSubjects: ['Ruby','Python','C','Wamp'],
   className: 'NET10',
   previousBackground: `Intern for startup (that failed)<- [not his fault]`,
-  grade: 96
+  grade: 107
 });
 
 const hiromi = new Student({
@@ -277,11 +277,10 @@ const magda = new Student({
   * If the student's grade is above a 70% let them graduate! Otherwise go back to grading their assignments to increase their score.
 */
 
+console.log(kehinde.grade)
+console.log(`this is the grade ${josh.grade}`);
 console.log(olade.gradeScore(josh));
-console.log(josh);
+console.log(`this is the grade ${josh.grade}`);
 console.log(kate.gradeScore(josh));
-console.log(josh);
+console.log(`this is the grade ${josh.grade}`);
 console.log(josh.graduate());
-
-
-
